@@ -5,7 +5,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/huseyin-bacanak/properties/
+          uri: https://github.com/huseyin-bacanak/properties
 server:
   port: 8888
 
