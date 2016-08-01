@@ -11,7 +11,7 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-        classpath('io.spring.gradle:dependency-management-plugin:0.5.4.RELEASE')
+        classpath('io.spring.gradle:dependency-management-plugin:0.6.0.RELEASE')
     }
 }
 
@@ -34,6 +34,7 @@ repositories {
 
 dependencies {
     compile('org.springframework.cloud:spring-cloud-config-server')
+    compile('org.springframework.cloud:spring-cloud-starter-eureka')
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
@@ -53,4 +54,10 @@ eclipse {
 
 task wrapper(type: Wrapper) {
     gradleVersion = '2.14'
+}
+
+test {
+    testLogging {
+        exceptionFormat = 'full'
+    }
 }
