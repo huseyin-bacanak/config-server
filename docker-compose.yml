@@ -1,0 +1,12 @@
+version: '2'
+services:
+  configuration:
+    build: .
+    ports:
+     - "8888:8888"
+    depends_on:
+     - discovery
+  discovery:
+    image: rave/discovery
+    ports:
+         - "8761:8761"
